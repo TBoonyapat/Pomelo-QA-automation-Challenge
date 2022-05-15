@@ -1,0 +1,1509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.10.2 on darwin)" generated="20220516 06:16:10.624" rpa="false" schemaversion="3">
+<suite id="s1" name="Part2" source="/Users/tawan/Downloads/Pomelo-QA-automation-Challenge/part2.robot">
+<test id="s1-t1" name="Scenario #1" line="9">
+<kw name="Open Pomelo Website" library="general">
+<arg>${Browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.pomelofashion.com/th/en/</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220516 06:16:10.710" level="INFO">Opening browser 'chrome' to base url 'https://www.pomelofashion.com/th/en/'.</msg>
+<status status="PASS" starttime="20220516 06:16:10.710" endtime="20220516 06:16:17.703"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:10.709" endtime="20220516 06:16:17.703"/>
+</kw>
+<kw name="Select Category At Shop" library="shopping">
+<arg>Dresses</arg>
+<arg>Dresses</arg>
+<kw name="Wait Element And Click" library="general">
+<arg>${HOME_HEADER_BUTTON_SHOP}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:16:17.704" endtime="20220516 06:16:17.726"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:16:17.727" level="INFO">Clicking element '//header//div[@role="button"]//span[contains(text(),"Shop")]'.</msg>
+<status status="PASS" starttime="20220516 06:16:17.726" endtime="20220516 06:16:17.760"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:17.704" endtime="20220516 06:16:17.760"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${select_category}</var>
+<arg>${HOME_HEADER_SHOP_CATEGORY}</arg>
+<arg>&lt;category&gt;</arg>
+<arg>${category}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220516 06:16:17.760" level="INFO">${select_category} = //nav//span[text()="Dresses"]/..//a[text()="&lt;sub_category&gt;"]</msg>
+<status status="PASS" starttime="20220516 06:16:17.760" endtime="20220516 06:16:17.760"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${path_category}</var>
+<arg>${select_category}</arg>
+<arg>&lt;sub_category&gt;</arg>
+<arg>${subcategory}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220516 06:16:17.760" level="INFO">${path_category} = //nav//span[text()="Dresses"]/..//a[text()="Dresses"]</msg>
+<status status="PASS" starttime="20220516 06:16:17.760" endtime="20220516 06:16:17.760"/>
+</kw>
+<kw name="Wait Element And Click" library="general">
+<arg>${path_category}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:16:17.761" endtime="20220516 06:16:17.997"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:16:17.997" level="INFO">Clicking element '//nav//span[text()="Dresses"]/..//a[text()="Dresses"]'.</msg>
+<status status="PASS" starttime="20220516 06:16:17.997" endtime="20220516 06:16:18.031"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:17.760" endtime="20220516 06:16:18.032"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:17.703" endtime="20220516 06:16:18.032"/>
+</kw>
+<kw name="Add Product And Verify" library="shopping">
+<arg>XXS</arg>
+<kw name="Replace String" library="String">
+<var>${add_to_bag}</var>
+<arg>${DRESSES_ADD_TO_BAG_SELECT_SIZE}</arg>
+<arg>&lt;size&gt;</arg>
+<arg>${size}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220516 06:16:18.032" level="INFO">${add_to_bag} = (//div//span[text()="Add To Bag"]/..//div//span[text()="XXS"])[1]</msg>
+<status status="PASS" starttime="20220516 06:16:18.032" endtime="20220516 06:16:18.032"/>
+</kw>
+<kw name="Wait Element And Get Text" library="general">
+<var>${product_name}</var>
+<arg>${DRESSES_PRODUCT_NAME}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:16:18.032" endtime="20220516 06:16:19.921"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:16:19.932" level="INFO">${text} = Raspberry Checkered Print Midi Dress - Blue</msg>
+<status status="PASS" starttime="20220516 06:16:19.921" endtime="20220516 06:16:19.932"/>
+</kw>
+<msg timestamp="20220516 06:16:19.932" level="INFO">${product_name} = Raspberry Checkered Print Midi Dress - Blue</msg>
+<status status="PASS" starttime="20220516 06:16:18.032" endtime="20220516 06:16:19.932"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${DRESSES_ADD_TO_BAG}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20220516 06:16:19.932" level="INFO">Simulating Mouse Over on element '(//span[text()="Add To Bag"])[1]'.</msg>
+<status status="PASS" starttime="20220516 06:16:19.932" endtime="20220516 06:16:20.196"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${product_status}</var>
+<arg>${add_to_bag}</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20220516 06:16:20.216" level="INFO">${product_status} = option-item button</msg>
+<status status="PASS" starttime="20220516 06:16:20.196" endtime="20220516 06:16:20.216"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${product_status}' == 'option-item sold-out button'</arg>
+<arg>Fail</arg>
+<arg>select size is out of stock.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220516 06:16:20.216" endtime="20220516 06:16:20.216"/>
+</kw>
+<kw name="Wait Element And Click" library="general">
+<arg>${add_to_bag}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:16:20.216" endtime="20220516 06:16:20.227"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:16:20.228" level="INFO">Clicking element '(//div//span[text()="Add To Bag"]/..//div//span[text()="XXS"])[1]'.</msg>
+<status status="PASS" starttime="20220516 06:16:20.227" endtime="20220516 06:16:20.254"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:20.216" endtime="20220516 06:16:20.254"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${xpath_product_in_bag}</var>
+<arg>${TOPBAR_BAG_ITEM_NAME}</arg>
+<arg>&lt;name&gt;</arg>
+<arg>${product_name}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220516 06:16:20.255" level="INFO">${xpath_product_in_bag} = //span[text()="Item added to Bag"]/../..//div[text()="Raspberry Checkered Print Midi Dress - Blue"]</msg>
+<status status="PASS" starttime="20220516 06:16:20.254" endtime="20220516 06:16:20.255"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${xpath_product_in_bag}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:16:20.255" endtime="20220516 06:16:22.787"/>
+</kw>
+<kw name="Wait Element And Click" library="general">
+<arg>${TOPBAR_BAG_CLOSE}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:16:22.787" endtime="20220516 06:16:22.802"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:16:22.802" level="INFO">Clicking element '//span[text()="Item added to Bag"]/../span/img'.</msg>
+<status status="PASS" starttime="20220516 06:16:22.802" endtime="20220516 06:16:22.842"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:22.787" endtime="20220516 06:16:22.842"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>product was successfull add to the bag.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220516 06:16:22.843" level="INFO">product was successfull add to the bag.</msg>
+<status status="PASS" starttime="20220516 06:16:22.842" endtime="20220516 06:16:22.843"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:18.032" endtime="20220516 06:16:22.843"/>
+</kw>
+<kw name="Click Bag" library="shopping">
+<kw name="Wait Element And Click" library="general">
+<arg>${TOPBAR_BAG_ICON}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:16:22.843" endtime="20220516 06:16:22.852"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:16:22.853" level="INFO">Clicking element '//img[@alt="badge-button"]'.</msg>
+<status status="PASS" starttime="20220516 06:16:22.853" endtime="20220516 06:16:22.889"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:22.843" endtime="20220516 06:16:22.889"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:22.843" endtime="20220516 06:16:22.889"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220516 06:16:22.889" endtime="20220516 06:16:22.971"/>
+</kw>
+<doc>A customer adds the products any cetegory and click "Cart" Icon</doc>
+<status status="PASS" starttime="20220516 06:16:10.709" endtime="20220516 06:16:22.971"/>
+</test>
+<test id="s1-t2" name="Scenario #2" line="17">
+<kw name="Open Pomelo Website" library="general">
+<arg>${Browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.pomelofashion.com/th/en/</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220516 06:16:22.972" level="INFO">Opening browser 'chrome' to base url 'https://www.pomelofashion.com/th/en/'.</msg>
+<status status="PASS" starttime="20220516 06:16:22.972" endtime="20220516 06:16:28.206"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:22.972" endtime="20220516 06:16:28.206"/>
+</kw>
+<kw name="Select Category At Shop" library="shopping">
+<arg>Dresses</arg>
+<arg>Dresses</arg>
+<kw name="Wait Element And Click" library="general">
+<arg>${HOME_HEADER_BUTTON_SHOP}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:16:28.208" endtime="20220516 06:16:28.228"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:16:28.229" level="INFO">Clicking element '//header//div[@role="button"]//span[contains(text(),"Shop")]'.</msg>
+<status status="PASS" starttime="20220516 06:16:28.229" endtime="20220516 06:16:28.261"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:28.207" endtime="20220516 06:16:28.261"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${select_category}</var>
+<arg>${HOME_HEADER_SHOP_CATEGORY}</arg>
+<arg>&lt;category&gt;</arg>
+<arg>${category}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220516 06:16:28.262" level="INFO">${select_category} = //nav//span[text()="Dresses"]/..//a[text()="&lt;sub_category&gt;"]</msg>
+<status status="PASS" starttime="20220516 06:16:28.262" endtime="20220516 06:16:28.262"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${path_category}</var>
+<arg>${select_category}</arg>
+<arg>&lt;sub_category&gt;</arg>
+<arg>${subcategory}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220516 06:16:28.262" level="INFO">${path_category} = //nav//span[text()="Dresses"]/..//a[text()="Dresses"]</msg>
+<status status="PASS" starttime="20220516 06:16:28.262" endtime="20220516 06:16:28.262"/>
+</kw>
+<kw name="Wait Element And Click" library="general">
+<arg>${path_category}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:16:28.262" endtime="20220516 06:16:28.488"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:16:28.488" level="INFO">Clicking element '//nav//span[text()="Dresses"]/..//a[text()="Dresses"]'.</msg>
+<status status="PASS" starttime="20220516 06:16:28.488" endtime="20220516 06:16:28.531"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:28.262" endtime="20220516 06:16:28.531"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:28.207" endtime="20220516 06:16:28.531"/>
+</kw>
+<kw name="Add Product And Verify" library="shopping">
+<arg>XXS</arg>
+<kw name="Replace String" library="String">
+<var>${add_to_bag}</var>
+<arg>${DRESSES_ADD_TO_BAG_SELECT_SIZE}</arg>
+<arg>&lt;size&gt;</arg>
+<arg>${size}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220516 06:16:28.532" level="INFO">${add_to_bag} = (//div//span[text()="Add To Bag"]/..//div//span[text()="XXS"])[1]</msg>
+<status status="PASS" starttime="20220516 06:16:28.532" endtime="20220516 06:16:28.532"/>
+</kw>
+<kw name="Wait Element And Get Text" library="general">
+<var>${product_name}</var>
+<arg>${DRESSES_PRODUCT_NAME}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:16:28.532" endtime="20220516 06:16:30.047"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:16:30.058" level="INFO">${text} = Raspberry Checkered Print Midi Dress - Blue</msg>
+<status status="PASS" starttime="20220516 06:16:30.047" endtime="20220516 06:16:30.058"/>
+</kw>
+<msg timestamp="20220516 06:16:30.058" level="INFO">${product_name} = Raspberry Checkered Print Midi Dress - Blue</msg>
+<status status="PASS" starttime="20220516 06:16:28.532" endtime="20220516 06:16:30.058"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${DRESSES_ADD_TO_BAG}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20220516 06:16:30.058" level="INFO">Simulating Mouse Over on element '(//span[text()="Add To Bag"])[1]'.</msg>
+<status status="PASS" starttime="20220516 06:16:30.058" endtime="20220516 06:16:30.328"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${product_status}</var>
+<arg>${add_to_bag}</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20220516 06:16:30.346" level="INFO">${product_status} = option-item button</msg>
+<status status="PASS" starttime="20220516 06:16:30.328" endtime="20220516 06:16:30.347"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${product_status}' == 'option-item sold-out button'</arg>
+<arg>Fail</arg>
+<arg>select size is out of stock.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220516 06:16:30.347" endtime="20220516 06:16:30.348"/>
+</kw>
+<kw name="Wait Element And Click" library="general">
+<arg>${add_to_bag}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:16:30.348" endtime="20220516 06:16:30.358"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:16:30.358" level="INFO">Clicking element '(//div//span[text()="Add To Bag"]/..//div//span[text()="XXS"])[1]'.</msg>
+<status status="PASS" starttime="20220516 06:16:30.358" endtime="20220516 06:16:30.385"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:30.348" endtime="20220516 06:16:30.385"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${xpath_product_in_bag}</var>
+<arg>${TOPBAR_BAG_ITEM_NAME}</arg>
+<arg>&lt;name&gt;</arg>
+<arg>${product_name}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220516 06:16:30.385" level="INFO">${xpath_product_in_bag} = //span[text()="Item added to Bag"]/../..//div[text()="Raspberry Checkered Print Midi Dress - Blue"]</msg>
+<status status="PASS" starttime="20220516 06:16:30.385" endtime="20220516 06:16:30.385"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${xpath_product_in_bag}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:16:30.385" endtime="20220516 06:16:32.551"/>
+</kw>
+<kw name="Wait Element And Click" library="general">
+<arg>${TOPBAR_BAG_CLOSE}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:16:32.551" endtime="20220516 06:16:32.561"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:16:32.562" level="INFO">Clicking element '//span[text()="Item added to Bag"]/../span/img'.</msg>
+<status status="PASS" starttime="20220516 06:16:32.562" endtime="20220516 06:16:32.598"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:32.551" endtime="20220516 06:16:32.598"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>product was successfull add to the bag.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220516 06:16:32.598" level="INFO">product was successfull add to the bag.</msg>
+<status status="PASS" starttime="20220516 06:16:32.598" endtime="20220516 06:16:32.598"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:28.532" endtime="20220516 06:16:32.598"/>
+</kw>
+<kw name="Click Bag" library="shopping">
+<kw name="Wait Element And Click" library="general">
+<arg>${TOPBAR_BAG_ICON}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:16:32.598" endtime="20220516 06:16:32.609"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:16:32.610" level="INFO">Clicking element '//img[@alt="badge-button"]'.</msg>
+<status status="PASS" starttime="20220516 06:16:32.609" endtime="20220516 06:16:32.640"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:32.598" endtime="20220516 06:16:32.640"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:32.598" endtime="20220516 06:16:32.640"/>
+</kw>
+<kw name="Adjust Quantity Of Product" library="shopping">
+<arg>2</arg>
+<kw name="Replace String" library="String">
+<var>${xpath_quantity}</var>
+<arg>${BAG_QUANTITY}</arg>
+<arg>&lt;name&gt;</arg>
+<arg>${product_name}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220516 06:16:32.641" level="INFO">${xpath_quantity} = //a[text()="None"]/../../..//label[@for="Quantity"]/..//select</msg>
+<status status="PASS" starttime="20220516 06:16:32.641" endtime="20220516 06:16:32.641"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${product_name}' != 'None'</arg>
+<arg>Wait Element And Select</arg>
+<arg>${xpath_quantity}</arg>
+<arg>${quantity}</arg>
+<arg>10s</arg>
+<arg>ELSE</arg>
+<arg>Wait Element And Select</arg>
+<arg>${BAG_QUANTITY_FIRST_ITEM}</arg>
+<arg>${quantity}</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Wait Element And Select" library="general">
+<arg>${BAG_QUANTITY_FIRST_ITEM}</arg>
+<arg>${quantity}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:16:32.641" endtime="20220516 06:16:33.073"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${value}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20220516 06:16:33.073" level="INFO">Selecting options from selection list '(//label[@for="Quantity"]/..//select)[1]' by value 2.</msg>
+<status status="PASS" starttime="20220516 06:16:33.073" endtime="20220516 06:16:33.118"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:32.641" endtime="20220516 06:16:33.118"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:32.641" endtime="20220516 06:16:33.118"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:32.640" endtime="20220516 06:16:33.118"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220516 06:16:33.119" endtime="20220516 06:16:33.198"/>
+</kw>
+<doc>A customer be able to adjusts quantity of product items or items.</doc>
+<status status="PASS" starttime="20220516 06:16:22.972" endtime="20220516 06:16:33.198"/>
+</test>
+<test id="s1-t3" name="Scenario #3" line="26">
+<kw name="Open Pomelo Website" library="general">
+<arg>${Browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.pomelofashion.com/th/en/</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220516 06:16:33.199" level="INFO">Opening browser 'chrome' to base url 'https://www.pomelofashion.com/th/en/'.</msg>
+<status status="PASS" starttime="20220516 06:16:33.199" endtime="20220516 06:16:38.449"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:33.198" endtime="20220516 06:16:38.449"/>
+</kw>
+<kw name="Select Category At Shop" library="shopping">
+<arg>Dresses</arg>
+<arg>Dresses</arg>
+<kw name="Wait Element And Click" library="general">
+<arg>${HOME_HEADER_BUTTON_SHOP}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:16:38.450" endtime="20220516 06:16:38.472"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:16:38.472" level="INFO">Clicking element '//header//div[@role="button"]//span[contains(text(),"Shop")]'.</msg>
+<status status="PASS" starttime="20220516 06:16:38.472" endtime="20220516 06:16:38.505"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:38.450" endtime="20220516 06:16:38.505"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${select_category}</var>
+<arg>${HOME_HEADER_SHOP_CATEGORY}</arg>
+<arg>&lt;category&gt;</arg>
+<arg>${category}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220516 06:16:38.505" level="INFO">${select_category} = //nav//span[text()="Dresses"]/..//a[text()="&lt;sub_category&gt;"]</msg>
+<status status="PASS" starttime="20220516 06:16:38.505" endtime="20220516 06:16:38.505"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${path_category}</var>
+<arg>${select_category}</arg>
+<arg>&lt;sub_category&gt;</arg>
+<arg>${subcategory}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220516 06:16:38.505" level="INFO">${path_category} = //nav//span[text()="Dresses"]/..//a[text()="Dresses"]</msg>
+<status status="PASS" starttime="20220516 06:16:38.505" endtime="20220516 06:16:38.505"/>
+</kw>
+<kw name="Wait Element And Click" library="general">
+<arg>${path_category}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:16:38.506" endtime="20220516 06:16:38.734"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:16:38.734" level="INFO">Clicking element '//nav//span[text()="Dresses"]/..//a[text()="Dresses"]'.</msg>
+<status status="PASS" starttime="20220516 06:16:38.734" endtime="20220516 06:16:38.765"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:38.505" endtime="20220516 06:16:38.765"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:38.450" endtime="20220516 06:16:38.765"/>
+</kw>
+<kw name="Add Product And Verify" library="shopping">
+<arg>XXS</arg>
+<kw name="Replace String" library="String">
+<var>${add_to_bag}</var>
+<arg>${DRESSES_ADD_TO_BAG_SELECT_SIZE}</arg>
+<arg>&lt;size&gt;</arg>
+<arg>${size}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220516 06:16:38.765" level="INFO">${add_to_bag} = (//div//span[text()="Add To Bag"]/..//div//span[text()="XXS"])[1]</msg>
+<status status="PASS" starttime="20220516 06:16:38.765" endtime="20220516 06:16:38.765"/>
+</kw>
+<kw name="Wait Element And Get Text" library="general">
+<var>${product_name}</var>
+<arg>${DRESSES_PRODUCT_NAME}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:16:38.765" endtime="20220516 06:16:40.396"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:16:40.406" level="INFO">${text} = Raspberry Checkered Print Midi Dress - Blue</msg>
+<status status="PASS" starttime="20220516 06:16:40.396" endtime="20220516 06:16:40.406"/>
+</kw>
+<msg timestamp="20220516 06:16:40.406" level="INFO">${product_name} = Raspberry Checkered Print Midi Dress - Blue</msg>
+<status status="PASS" starttime="20220516 06:16:38.765" endtime="20220516 06:16:40.406"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${DRESSES_ADD_TO_BAG}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20220516 06:16:40.406" level="INFO">Simulating Mouse Over on element '(//span[text()="Add To Bag"])[1]'.</msg>
+<status status="PASS" starttime="20220516 06:16:40.406" endtime="20220516 06:16:40.679"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${product_status}</var>
+<arg>${add_to_bag}</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20220516 06:16:40.697" level="INFO">${product_status} = option-item button</msg>
+<status status="PASS" starttime="20220516 06:16:40.679" endtime="20220516 06:16:40.697"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${product_status}' == 'option-item sold-out button'</arg>
+<arg>Fail</arg>
+<arg>select size is out of stock.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220516 06:16:40.697" endtime="20220516 06:16:40.697"/>
+</kw>
+<kw name="Wait Element And Click" library="general">
+<arg>${add_to_bag}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:16:40.698" endtime="20220516 06:16:40.707"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:16:40.707" level="INFO">Clicking element '(//div//span[text()="Add To Bag"]/..//div//span[text()="XXS"])[1]'.</msg>
+<status status="PASS" starttime="20220516 06:16:40.707" endtime="20220516 06:16:40.734"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:40.697" endtime="20220516 06:16:40.734"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${xpath_product_in_bag}</var>
+<arg>${TOPBAR_BAG_ITEM_NAME}</arg>
+<arg>&lt;name&gt;</arg>
+<arg>${product_name}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220516 06:16:40.734" level="INFO">${xpath_product_in_bag} = //span[text()="Item added to Bag"]/../..//div[text()="Raspberry Checkered Print Midi Dress - Blue"]</msg>
+<status status="PASS" starttime="20220516 06:16:40.734" endtime="20220516 06:16:40.734"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${xpath_product_in_bag}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:16:40.734" endtime="20220516 06:16:43.335"/>
+</kw>
+<kw name="Wait Element And Click" library="general">
+<arg>${TOPBAR_BAG_CLOSE}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:16:43.335" endtime="20220516 06:16:43.350"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:16:43.350" level="INFO">Clicking element '//span[text()="Item added to Bag"]/../span/img'.</msg>
+<status status="PASS" starttime="20220516 06:16:43.350" endtime="20220516 06:16:43.390"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:43.335" endtime="20220516 06:16:43.390"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>product was successfull add to the bag.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220516 06:16:43.390" level="INFO">product was successfull add to the bag.</msg>
+<status status="PASS" starttime="20220516 06:16:43.390" endtime="20220516 06:16:43.390"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:38.765" endtime="20220516 06:16:43.391"/>
+</kw>
+<kw name="Click Bag" library="shopping">
+<kw name="Wait Element And Click" library="general">
+<arg>${TOPBAR_BAG_ICON}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:16:43.391" endtime="20220516 06:16:43.404"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:16:43.404" level="INFO">Clicking element '//img[@alt="badge-button"]'.</msg>
+<status status="PASS" starttime="20220516 06:16:43.404" endtime="20220516 06:16:43.436"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:43.391" endtime="20220516 06:16:43.436"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:43.391" endtime="20220516 06:16:43.436"/>
+</kw>
+<kw name="Adjust Size Of Product" library="shopping">
+<arg>XS</arg>
+<if>
+<branch type="IF" condition="'${product_name}' != 'None'">
+<kw name="Replace String" library="String">
+<var>${select_size}</var>
+<arg>${BAG_SIZE}</arg>
+<arg>&lt;size&gt;</arg>
+<arg>${size}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="NOT RUN" starttime="20220516 06:16:43.436" endtime="20220516 06:16:43.436"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${xpath_size}</var>
+<arg>${select_size}</arg>
+<arg>&lt;name&gt;</arg>
+<arg>${product_name}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="NOT RUN" starttime="20220516 06:16:43.436" endtime="20220516 06:16:43.436"/>
+</kw>
+<kw name="Wait Element And Click" library="general">
+<arg>${xpath_size}</arg>
+<arg>10s</arg>
+<status status="NOT RUN" starttime="20220516 06:16:43.436" endtime="20220516 06:16:43.436"/>
+</kw>
+<status status="NOT RUN" starttime="20220516 06:16:43.436" endtime="20220516 06:16:43.436"/>
+</branch>
+<branch type="ELSE">
+<kw name="Replace String" library="String">
+<var>${select_size}</var>
+<arg>${BAG_SIZE_FIRST_ITEM}</arg>
+<arg>&lt;size&gt;</arg>
+<arg>${size}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220516 06:16:43.437" level="INFO">${select_size} = (//label[@for="Size"]/..//select//option[text()="XS"])[1]</msg>
+<status status="PASS" starttime="20220516 06:16:43.436" endtime="20220516 06:16:43.437"/>
+</kw>
+<kw name="Wait Element And Click" library="general">
+<arg>${select_size}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:16:43.437" endtime="20220516 06:16:43.660"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:16:43.660" level="INFO">Clicking element '(//label[@for="Size"]/..//select//option[text()="XS"])[1]'.</msg>
+<status status="PASS" starttime="20220516 06:16:43.660" endtime="20220516 06:16:43.695"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:43.437" endtime="20220516 06:16:43.695"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:43.436" endtime="20220516 06:16:43.695"/>
+</branch>
+<status status="PASS" starttime="20220516 06:16:43.436" endtime="20220516 06:16:43.695"/>
+</if>
+<status status="PASS" starttime="20220516 06:16:43.436" endtime="20220516 06:16:43.695"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220516 06:16:43.696" endtime="20220516 06:16:43.780"/>
+</kw>
+<doc>A customer be able to adjusts size of product items or items.</doc>
+<status status="PASS" starttime="20220516 06:16:33.198" endtime="20220516 06:16:43.780"/>
+</test>
+<test id="s1-t4" name="Scenario #4" line="35">
+<kw name="Open Pomelo Website" library="general">
+<arg>${Browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.pomelofashion.com/th/en/</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220516 06:16:43.781" level="INFO">Opening browser 'chrome' to base url 'https://www.pomelofashion.com/th/en/'.</msg>
+<status status="PASS" starttime="20220516 06:16:43.781" endtime="20220516 06:16:49.220"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:43.780" endtime="20220516 06:16:49.220"/>
+</kw>
+<kw name="Select Category At Shop" library="shopping">
+<arg>Dresses</arg>
+<arg>Dresses</arg>
+<kw name="Wait Element And Click" library="general">
+<arg>${HOME_HEADER_BUTTON_SHOP}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:16:49.221" endtime="20220516 06:16:49.240"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:16:49.240" level="INFO">Clicking element '//header//div[@role="button"]//span[contains(text(),"Shop")]'.</msg>
+<status status="PASS" starttime="20220516 06:16:49.240" endtime="20220516 06:16:49.268"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:49.221" endtime="20220516 06:16:49.269"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${select_category}</var>
+<arg>${HOME_HEADER_SHOP_CATEGORY}</arg>
+<arg>&lt;category&gt;</arg>
+<arg>${category}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220516 06:16:49.269" level="INFO">${select_category} = //nav//span[text()="Dresses"]/..//a[text()="&lt;sub_category&gt;"]</msg>
+<status status="PASS" starttime="20220516 06:16:49.269" endtime="20220516 06:16:49.269"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${path_category}</var>
+<arg>${select_category}</arg>
+<arg>&lt;sub_category&gt;</arg>
+<arg>${subcategory}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220516 06:16:49.269" level="INFO">${path_category} = //nav//span[text()="Dresses"]/..//a[text()="Dresses"]</msg>
+<status status="PASS" starttime="20220516 06:16:49.269" endtime="20220516 06:16:49.269"/>
+</kw>
+<kw name="Wait Element And Click" library="general">
+<arg>${path_category}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:16:49.269" endtime="20220516 06:16:49.498"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:16:49.499" level="INFO">Clicking element '//nav//span[text()="Dresses"]/..//a[text()="Dresses"]'.</msg>
+<status status="PASS" starttime="20220516 06:16:49.498" endtime="20220516 06:16:49.531"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:49.269" endtime="20220516 06:16:49.531"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:49.220" endtime="20220516 06:16:49.531"/>
+</kw>
+<kw name="Add Product And Verify" library="shopping">
+<arg>XXS</arg>
+<kw name="Replace String" library="String">
+<var>${add_to_bag}</var>
+<arg>${DRESSES_ADD_TO_BAG_SELECT_SIZE}</arg>
+<arg>&lt;size&gt;</arg>
+<arg>${size}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220516 06:16:49.532" level="INFO">${add_to_bag} = (//div//span[text()="Add To Bag"]/..//div//span[text()="XXS"])[1]</msg>
+<status status="PASS" starttime="20220516 06:16:49.532" endtime="20220516 06:16:49.532"/>
+</kw>
+<kw name="Wait Element And Get Text" library="general">
+<var>${product_name}</var>
+<arg>${DRESSES_PRODUCT_NAME}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:16:49.532" endtime="20220516 06:16:51.112"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:16:51.123" level="INFO">${text} = Raspberry Checkered Print Midi Dress - Blue</msg>
+<status status="PASS" starttime="20220516 06:16:51.112" endtime="20220516 06:16:51.123"/>
+</kw>
+<msg timestamp="20220516 06:16:51.123" level="INFO">${product_name} = Raspberry Checkered Print Midi Dress - Blue</msg>
+<status status="PASS" starttime="20220516 06:16:49.532" endtime="20220516 06:16:51.123"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${DRESSES_ADD_TO_BAG}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20220516 06:16:51.123" level="INFO">Simulating Mouse Over on element '(//span[text()="Add To Bag"])[1]'.</msg>
+<status status="PASS" starttime="20220516 06:16:51.123" endtime="20220516 06:16:51.396"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${product_status}</var>
+<arg>${add_to_bag}</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20220516 06:16:51.410" level="INFO">${product_status} = option-item button</msg>
+<status status="PASS" starttime="20220516 06:16:51.396" endtime="20220516 06:16:51.410"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${product_status}' == 'option-item sold-out button'</arg>
+<arg>Fail</arg>
+<arg>select size is out of stock.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220516 06:16:51.410" endtime="20220516 06:16:51.411"/>
+</kw>
+<kw name="Wait Element And Click" library="general">
+<arg>${add_to_bag}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:16:51.411" endtime="20220516 06:16:51.419"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:16:51.419" level="INFO">Clicking element '(//div//span[text()="Add To Bag"]/..//div//span[text()="XXS"])[1]'.</msg>
+<status status="PASS" starttime="20220516 06:16:51.419" endtime="20220516 06:16:51.448"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:51.411" endtime="20220516 06:16:51.448"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${xpath_product_in_bag}</var>
+<arg>${TOPBAR_BAG_ITEM_NAME}</arg>
+<arg>&lt;name&gt;</arg>
+<arg>${product_name}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220516 06:16:51.448" level="INFO">${xpath_product_in_bag} = //span[text()="Item added to Bag"]/../..//div[text()="Raspberry Checkered Print Midi Dress - Blue"]</msg>
+<status status="PASS" starttime="20220516 06:16:51.448" endtime="20220516 06:16:51.448"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${xpath_product_in_bag}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:16:51.448" endtime="20220516 06:16:53.579"/>
+</kw>
+<kw name="Wait Element And Click" library="general">
+<arg>${TOPBAR_BAG_CLOSE}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:16:53.579" endtime="20220516 06:16:53.808"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:16:53.809" level="INFO">Clicking element '//span[text()="Item added to Bag"]/../span/img'.</msg>
+<status status="PASS" starttime="20220516 06:16:53.808" endtime="20220516 06:16:53.855"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:53.579" endtime="20220516 06:16:53.855"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>product was successfull add to the bag.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220516 06:16:53.856" level="INFO">product was successfull add to the bag.</msg>
+<status status="PASS" starttime="20220516 06:16:53.856" endtime="20220516 06:16:53.856"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:49.531" endtime="20220516 06:16:53.856"/>
+</kw>
+<kw name="Click Bag" library="shopping">
+<kw name="Wait Element And Click" library="general">
+<arg>${TOPBAR_BAG_ICON}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:16:53.856" endtime="20220516 06:16:53.866"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:16:53.866" level="INFO">Clicking element '//img[@alt="badge-button"]'.</msg>
+<status status="PASS" starttime="20220516 06:16:53.866" endtime="20220516 06:16:53.926"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:53.856" endtime="20220516 06:16:53.926"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:53.856" endtime="20220516 06:16:53.926"/>
+</kw>
+<kw name="Delete Product And Verify" library="shopping">
+<kw name="Replace String" library="String">
+<var>${xpath_button_delete}</var>
+<arg>${BAG_BUTTON_DELETE}</arg>
+<arg>&lt;name&gt;</arg>
+<arg>${product_name}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220516 06:16:53.926" level="INFO">${xpath_button_delete} = (//a[text()="None"]/../../../..//span/img)[1]</msg>
+<status status="PASS" starttime="20220516 06:16:53.926" endtime="20220516 06:16:53.926"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${product_name}' != 'None'</arg>
+<arg>Wait Element And Click</arg>
+<arg>${xpath_button_delete}</arg>
+<arg>10s</arg>
+<arg>ELSE</arg>
+<arg>Wait Element And Click</arg>
+<arg>${BAG_BUTTON_DELETE_FiRST_ITEM}</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Wait Element And Click" library="general">
+<arg>${BAG_BUTTON_DELETE_FiRST_ITEM}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:16:53.927" endtime="20220516 06:16:54.152"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:16:54.153" level="INFO">Clicking element '(//label[@for="Size"]/../../../../..//span/img)[1]'.</msg>
+<status status="PASS" starttime="20220516 06:16:54.153" endtime="20220516 06:16:54.201"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:53.927" endtime="20220516 06:16:54.201"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:53.926" endtime="20220516 06:16:54.201"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${BAG_EMPTY}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:16:54.201" endtime="20220516 06:16:55.265"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>product has been delete.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220516 06:16:55.266" level="INFO">product has been delete.</msg>
+<status status="PASS" starttime="20220516 06:16:55.266" endtime="20220516 06:16:55.266"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:53.926" endtime="20220516 06:16:55.266"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220516 06:16:55.266" endtime="20220516 06:16:55.360"/>
+</kw>
+<doc>A customer be able to adjust and delete product items or items.</doc>
+<status status="PASS" starttime="20220516 06:16:43.780" endtime="20220516 06:16:55.360"/>
+</test>
+<test id="s1-t5" name="Scenario #5" line="44">
+<kw name="Open Pomelo Website" library="general">
+<arg>${Browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.pomelofashion.com/th/en/</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220516 06:16:55.361" level="INFO">Opening browser 'chrome' to base url 'https://www.pomelofashion.com/th/en/'.</msg>
+<status status="PASS" starttime="20220516 06:16:55.361" endtime="20220516 06:17:01.028"/>
+</kw>
+<status status="PASS" starttime="20220516 06:16:55.361" endtime="20220516 06:17:01.028"/>
+</kw>
+<kw name="Select Category At Shop" library="shopping">
+<arg>Dresses</arg>
+<arg>Dresses</arg>
+<kw name="Wait Element And Click" library="general">
+<arg>${HOME_HEADER_BUTTON_SHOP}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:17:01.030" endtime="20220516 06:17:01.051"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:17:01.051" level="INFO">Clicking element '//header//div[@role="button"]//span[contains(text(),"Shop")]'.</msg>
+<status status="PASS" starttime="20220516 06:17:01.051" endtime="20220516 06:17:01.083"/>
+</kw>
+<status status="PASS" starttime="20220516 06:17:01.029" endtime="20220516 06:17:01.083"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${select_category}</var>
+<arg>${HOME_HEADER_SHOP_CATEGORY}</arg>
+<arg>&lt;category&gt;</arg>
+<arg>${category}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220516 06:17:01.084" level="INFO">${select_category} = //nav//span[text()="Dresses"]/..//a[text()="&lt;sub_category&gt;"]</msg>
+<status status="PASS" starttime="20220516 06:17:01.084" endtime="20220516 06:17:01.084"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${path_category}</var>
+<arg>${select_category}</arg>
+<arg>&lt;sub_category&gt;</arg>
+<arg>${subcategory}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220516 06:17:01.085" level="INFO">${path_category} = //nav//span[text()="Dresses"]/..//a[text()="Dresses"]</msg>
+<status status="PASS" starttime="20220516 06:17:01.084" endtime="20220516 06:17:01.085"/>
+</kw>
+<kw name="Wait Element And Click" library="general">
+<arg>${path_category}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:17:01.085" endtime="20220516 06:17:01.316"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:17:01.316" level="INFO">Clicking element '//nav//span[text()="Dresses"]/..//a[text()="Dresses"]'.</msg>
+<status status="PASS" starttime="20220516 06:17:01.316" endtime="20220516 06:17:01.348"/>
+</kw>
+<status status="PASS" starttime="20220516 06:17:01.085" endtime="20220516 06:17:01.348"/>
+</kw>
+<status status="PASS" starttime="20220516 06:17:01.029" endtime="20220516 06:17:01.348"/>
+</kw>
+<kw name="Add Product And Verify" library="shopping">
+<arg>XXS</arg>
+<kw name="Replace String" library="String">
+<var>${add_to_bag}</var>
+<arg>${DRESSES_ADD_TO_BAG_SELECT_SIZE}</arg>
+<arg>&lt;size&gt;</arg>
+<arg>${size}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220516 06:17:01.348" level="INFO">${add_to_bag} = (//div//span[text()="Add To Bag"]/..//div//span[text()="XXS"])[1]</msg>
+<status status="PASS" starttime="20220516 06:17:01.348" endtime="20220516 06:17:01.348"/>
+</kw>
+<kw name="Wait Element And Get Text" library="general">
+<var>${product_name}</var>
+<arg>${DRESSES_PRODUCT_NAME}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:17:01.348" endtime="20220516 06:17:03.236"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:17:03.248" level="INFO">${text} = Raspberry Checkered Print Midi Dress - Blue</msg>
+<status status="PASS" starttime="20220516 06:17:03.236" endtime="20220516 06:17:03.248"/>
+</kw>
+<msg timestamp="20220516 06:17:03.248" level="INFO">${product_name} = Raspberry Checkered Print Midi Dress - Blue</msg>
+<status status="PASS" starttime="20220516 06:17:01.348" endtime="20220516 06:17:03.248"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${DRESSES_ADD_TO_BAG}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20220516 06:17:03.248" level="INFO">Simulating Mouse Over on element '(//span[text()="Add To Bag"])[1]'.</msg>
+<status status="PASS" starttime="20220516 06:17:03.248" endtime="20220516 06:17:03.512"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${product_status}</var>
+<arg>${add_to_bag}</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20220516 06:17:03.531" level="INFO">${product_status} = option-item button</msg>
+<status status="PASS" starttime="20220516 06:17:03.512" endtime="20220516 06:17:03.531"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${product_status}' == 'option-item sold-out button'</arg>
+<arg>Fail</arg>
+<arg>select size is out of stock.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220516 06:17:03.531" endtime="20220516 06:17:03.531"/>
+</kw>
+<kw name="Wait Element And Click" library="general">
+<arg>${add_to_bag}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:17:03.531" endtime="20220516 06:17:03.544"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:17:03.544" level="INFO">Clicking element '(//div//span[text()="Add To Bag"]/..//div//span[text()="XXS"])[1]'.</msg>
+<status status="PASS" starttime="20220516 06:17:03.544" endtime="20220516 06:17:03.571"/>
+</kw>
+<status status="PASS" starttime="20220516 06:17:03.531" endtime="20220516 06:17:03.571"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${xpath_product_in_bag}</var>
+<arg>${TOPBAR_BAG_ITEM_NAME}</arg>
+<arg>&lt;name&gt;</arg>
+<arg>${product_name}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220516 06:17:03.571" level="INFO">${xpath_product_in_bag} = //span[text()="Item added to Bag"]/../..//div[text()="Raspberry Checkered Print Midi Dress - Blue"]</msg>
+<status status="PASS" starttime="20220516 06:17:03.571" endtime="20220516 06:17:03.571"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${xpath_product_in_bag}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:17:03.571" endtime="20220516 06:17:06.346"/>
+</kw>
+<kw name="Wait Element And Click" library="general">
+<arg>${TOPBAR_BAG_CLOSE}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:17:06.346" endtime="20220516 06:17:06.359"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:17:06.359" level="INFO">Clicking element '//span[text()="Item added to Bag"]/../span/img'.</msg>
+<status status="PASS" starttime="20220516 06:17:06.359" endtime="20220516 06:17:06.394"/>
+</kw>
+<status status="PASS" starttime="20220516 06:17:06.346" endtime="20220516 06:17:06.395"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>product was successfull add to the bag.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220516 06:17:06.395" level="INFO">product was successfull add to the bag.</msg>
+<status status="PASS" starttime="20220516 06:17:06.395" endtime="20220516 06:17:06.395"/>
+</kw>
+<status status="PASS" starttime="20220516 06:17:01.348" endtime="20220516 06:17:06.395"/>
+</kw>
+<kw name="Click Bag" library="shopping">
+<kw name="Wait Element And Click" library="general">
+<arg>${TOPBAR_BAG_ICON}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:17:06.395" endtime="20220516 06:17:06.405"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:17:06.405" level="INFO">Clicking element '//img[@alt="badge-button"]'.</msg>
+<status status="PASS" starttime="20220516 06:17:06.405" endtime="20220516 06:17:06.439"/>
+</kw>
+<status status="PASS" starttime="20220516 06:17:06.395" endtime="20220516 06:17:06.439"/>
+</kw>
+<status status="PASS" starttime="20220516 06:17:06.395" endtime="20220516 06:17:06.439"/>
+</kw>
+<kw name="Fill-in Promotion" library="shopping">
+<arg>GET30TH</arg>
+<kw name="Wait Element And Input" library="general">
+<arg>${BAG_INPUT_PROMPTION}</arg>
+<arg>${promotion_code}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:17:06.440" endtime="20220516 06:17:06.660"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220516 06:17:06.661" level="INFO">Typing text 'GET30TH' into text field '//div[text()="Promotions &amp; Discounts"]/..//input'.</msg>
+<status status="PASS" starttime="20220516 06:17:06.660" endtime="20220516 06:17:06.738"/>
+</kw>
+<status status="PASS" starttime="20220516 06:17:06.439" endtime="20220516 06:17:06.739"/>
+</kw>
+<kw name="Wait Element And Click" library="general">
+<arg>${BAG_BUTTON_APPLY}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:17:06.739" endtime="20220516 06:17:06.750"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:17:06.751" level="INFO">Clicking element '//button/span[text()="Apply"]'.</msg>
+<status status="PASS" starttime="20220516 06:17:06.750" endtime="20220516 06:17:06.772"/>
+</kw>
+<status status="PASS" starttime="20220516 06:17:06.739" endtime="20220516 06:17:06.772"/>
+</kw>
+<status status="PASS" starttime="20220516 06:17:06.439" endtime="20220516 06:17:06.772"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220516 06:17:06.772" endtime="20220516 06:17:06.856"/>
+</kw>
+<doc>A customer be able to fill-in and click apply promo code. (even if promocode is not eligible)</doc>
+<status status="PASS" starttime="20220516 06:16:55.361" endtime="20220516 06:17:06.856"/>
+</test>
+<test id="s1-t6" name="Scenario #6" line="53">
+<kw name="Open Pomelo Website" library="general">
+<arg>${Browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.pomelofashion.com/th/en/</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220516 06:17:06.857" level="INFO">Opening browser 'chrome' to base url 'https://www.pomelofashion.com/th/en/'.</msg>
+<status status="PASS" starttime="20220516 06:17:06.857" endtime="20220516 06:17:12.744"/>
+</kw>
+<status status="PASS" starttime="20220516 06:17:06.856" endtime="20220516 06:17:12.745"/>
+</kw>
+<kw name="Select Category At Shop" library="shopping">
+<arg>Dresses</arg>
+<arg>Dresses</arg>
+<kw name="Wait Element And Click" library="general">
+<arg>${HOME_HEADER_BUTTON_SHOP}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:17:12.746" endtime="20220516 06:17:12.766"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:17:12.767" level="INFO">Clicking element '//header//div[@role="button"]//span[contains(text(),"Shop")]'.</msg>
+<status status="PASS" starttime="20220516 06:17:12.766" endtime="20220516 06:17:12.801"/>
+</kw>
+<status status="PASS" starttime="20220516 06:17:12.746" endtime="20220516 06:17:12.801"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${select_category}</var>
+<arg>${HOME_HEADER_SHOP_CATEGORY}</arg>
+<arg>&lt;category&gt;</arg>
+<arg>${category}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220516 06:17:12.801" level="INFO">${select_category} = //nav//span[text()="Dresses"]/..//a[text()="&lt;sub_category&gt;"]</msg>
+<status status="PASS" starttime="20220516 06:17:12.801" endtime="20220516 06:17:12.801"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${path_category}</var>
+<arg>${select_category}</arg>
+<arg>&lt;sub_category&gt;</arg>
+<arg>${subcategory}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220516 06:17:12.802" level="INFO">${path_category} = //nav//span[text()="Dresses"]/..//a[text()="Dresses"]</msg>
+<status status="PASS" starttime="20220516 06:17:12.801" endtime="20220516 06:17:12.802"/>
+</kw>
+<kw name="Wait Element And Click" library="general">
+<arg>${path_category}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:17:12.802" endtime="20220516 06:17:13.027"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:17:13.027" level="INFO">Clicking element '//nav//span[text()="Dresses"]/..//a[text()="Dresses"]'.</msg>
+<status status="PASS" starttime="20220516 06:17:13.027" endtime="20220516 06:17:13.065"/>
+</kw>
+<status status="PASS" starttime="20220516 06:17:12.802" endtime="20220516 06:17:13.065"/>
+</kw>
+<status status="PASS" starttime="20220516 06:17:12.745" endtime="20220516 06:17:13.065"/>
+</kw>
+<kw name="Add Product And Verify" library="shopping">
+<arg>XXS</arg>
+<kw name="Replace String" library="String">
+<var>${add_to_bag}</var>
+<arg>${DRESSES_ADD_TO_BAG_SELECT_SIZE}</arg>
+<arg>&lt;size&gt;</arg>
+<arg>${size}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220516 06:17:13.066" level="INFO">${add_to_bag} = (//div//span[text()="Add To Bag"]/..//div//span[text()="XXS"])[1]</msg>
+<status status="PASS" starttime="20220516 06:17:13.065" endtime="20220516 06:17:13.066"/>
+</kw>
+<kw name="Wait Element And Get Text" library="general">
+<var>${product_name}</var>
+<arg>${DRESSES_PRODUCT_NAME}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:17:13.066" endtime="20220516 06:17:14.899"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:17:14.913" level="INFO">${text} = Raspberry Checkered Print Midi Dress - Blue</msg>
+<status status="PASS" starttime="20220516 06:17:14.899" endtime="20220516 06:17:14.913"/>
+</kw>
+<msg timestamp="20220516 06:17:14.914" level="INFO">${product_name} = Raspberry Checkered Print Midi Dress - Blue</msg>
+<status status="PASS" starttime="20220516 06:17:13.066" endtime="20220516 06:17:14.914"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${DRESSES_ADD_TO_BAG}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20220516 06:17:14.914" level="INFO">Simulating Mouse Over on element '(//span[text()="Add To Bag"])[1]'.</msg>
+<status status="PASS" starttime="20220516 06:17:14.914" endtime="20220516 06:17:15.178"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${product_status}</var>
+<arg>${add_to_bag}</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20220516 06:17:15.197" level="INFO">${product_status} = option-item button</msg>
+<status status="PASS" starttime="20220516 06:17:15.178" endtime="20220516 06:17:15.197"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${product_status}' == 'option-item sold-out button'</arg>
+<arg>Fail</arg>
+<arg>select size is out of stock.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220516 06:17:15.197" endtime="20220516 06:17:15.197"/>
+</kw>
+<kw name="Wait Element And Click" library="general">
+<arg>${add_to_bag}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:17:15.197" endtime="20220516 06:17:15.207"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:17:15.207" level="INFO">Clicking element '(//div//span[text()="Add To Bag"]/..//div//span[text()="XXS"])[1]'.</msg>
+<status status="PASS" starttime="20220516 06:17:15.207" endtime="20220516 06:17:15.236"/>
+</kw>
+<status status="PASS" starttime="20220516 06:17:15.197" endtime="20220516 06:17:15.236"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${xpath_product_in_bag}</var>
+<arg>${TOPBAR_BAG_ITEM_NAME}</arg>
+<arg>&lt;name&gt;</arg>
+<arg>${product_name}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20220516 06:17:15.236" level="INFO">${xpath_product_in_bag} = //span[text()="Item added to Bag"]/../..//div[text()="Raspberry Checkered Print Midi Dress - Blue"]</msg>
+<status status="PASS" starttime="20220516 06:17:15.236" endtime="20220516 06:17:15.236"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${xpath_product_in_bag}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:17:15.236" endtime="20220516 06:17:17.859"/>
+</kw>
+<kw name="Wait Element And Click" library="general">
+<arg>${TOPBAR_BAG_CLOSE}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:17:17.860" endtime="20220516 06:17:17.872"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:17:17.873" level="INFO">Clicking element '//span[text()="Item added to Bag"]/../span/img'.</msg>
+<status status="PASS" starttime="20220516 06:17:17.873" endtime="20220516 06:17:17.911"/>
+</kw>
+<status status="PASS" starttime="20220516 06:17:17.859" endtime="20220516 06:17:17.911"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>product was successfull add to the bag.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220516 06:17:17.912" level="INFO">product was successfull add to the bag.</msg>
+<status status="PASS" starttime="20220516 06:17:17.911" endtime="20220516 06:17:17.912"/>
+</kw>
+<status status="PASS" starttime="20220516 06:17:13.065" endtime="20220516 06:17:17.912"/>
+</kw>
+<kw name="Click Bag" library="shopping">
+<kw name="Wait Element And Click" library="general">
+<arg>${TOPBAR_BAG_ICON}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:17:17.912" endtime="20220516 06:17:17.922"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:17:17.922" level="INFO">Clicking element '//img[@alt="badge-button"]'.</msg>
+<status status="PASS" starttime="20220516 06:17:17.922" endtime="20220516 06:17:17.954"/>
+</kw>
+<status status="PASS" starttime="20220516 06:17:17.912" endtime="20220516 06:17:17.954"/>
+</kw>
+<status status="PASS" starttime="20220516 06:17:17.912" endtime="20220516 06:17:17.954"/>
+</kw>
+<kw name="Check Out" library="shopping">
+<kw name="Wait Element And Click" library="general">
+<arg>${BAG_BUTTON_CHECK_OUT}</arg>
+<arg>10s</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${time}</arg>
+<arg>${error}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220516 06:17:17.955" endtime="20220516 06:17:18.177"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220516 06:17:18.178" level="INFO">Clicking element '//button/span[text()="Check out now"]'.</msg>
+<status status="PASS" starttime="20220516 06:17:18.178" endtime="20220516 06:17:18.233"/>
+</kw>
+<status status="PASS" starttime="20220516 06:17:17.954" endtime="20220516 06:17:18.233"/>
+</kw>
+<status status="PASS" starttime="20220516 06:17:17.954" endtime="20220516 06:17:18.233"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220516 06:17:18.233" endtime="20220516 06:17:18.323"/>
+</kw>
+<doc>A customer be able to validate proceed to checkout button.</doc>
+<status status="PASS" starttime="20220516 06:17:06.856" endtime="20220516 06:17:18.324"/>
+</test>
+<status status="PASS" starttime="20220516 06:16:10.625" endtime="20220516 06:17:18.324"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="6" fail="0" skip="0" id="s1" name="Part2">Part2</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
