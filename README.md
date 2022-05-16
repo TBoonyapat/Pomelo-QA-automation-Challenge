@@ -27,7 +27,7 @@ chromedriver
 
 Command to run all test scripts
 
-> robot part2.py
+> robot part2.robot
 
 Command to run some test scripts
 
