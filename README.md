@@ -13,6 +13,22 @@ Install required packages from [requirements.txt](/requirements.txt) with comman
 
 > pip install -r requirements.txt --user
 
-<!-- ```bash
-pip install -r requirements.txt --user
-``` -->
+If you are use it for macOS you have to run the command as below the below command will install chromedriver for you.
+
+> brew reinstall --cask chromedriver
+
+```python
+robotframework=5.0
+chromedriver
+```
+
+## Usage
+
+
+Command to run all test scripts
+
+> robot part2.py
+
+Command to run some test scripts
+
+> robot -i -tag- part2.robot
