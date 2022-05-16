@@ -1,6 +1,6 @@
 # Pomelo-QA-automation-Challenge
 ## Getting Started
-> git clone https://github.com/TBoonyapat/Pomelo-QA-automation-Challenge.git
+> git clone -b Transformation https://github.com/TBoonyapat/Pomelo-QA-automation-Challenge.git
 
 ## Installation
 ### Python Packages
