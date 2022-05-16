@@ -3,6 +3,8 @@ Library    String
 Library    BuiltIn 
 Library    SeleniumLibrary    
 
+Resource         ..${/}config.resource
+
 Resource         general.resource
 Resource         shopping.resource
 

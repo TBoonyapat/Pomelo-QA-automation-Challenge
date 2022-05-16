@@ -2,60 +2,57 @@
 Resource         keywords${/}import_setting.resource
 Test Teardown    Close All Browsers
 
-*** Variables ***
-${Browser}    chrome
-
 *** Test Cases ***
-Scenario #1
+Scenario_01
     [Documentation]    A customer adds the products any cetegory and click "Cart" Icon
 
-    Open Pomelo Website        ${Browser} 
-    Select Category At Shop    Dresses    Dresses
-    Add Product And Verify     XXS
+    Open Pomelo Website        ${BROWSER} 
+    Select Category At Shop    ${CATEGORY}    ${SUB_CATEGORY}
+    Add Product And Verify     ${SIZE}
     Click Bag
 
-Scenario #2
+Scenario_02
     [Documentation]    A customer be able to adjusts quantity of product items or items.
 
-    Open Pomelo Website           ${Browser} 
-    Select Category At Shop       Dresses        Dresses
-    Add Product And Verify        XXS
+    Open Pomelo Website           ${BROWSER} 
+    Select Category At Shop      ${CATEGORY}    ${SUB_CATEGORY}
+    Add Product And Verify         ${SIZE}
     Click Bag
-    Adjust Quantity Of Product    2
+    Adjust Quantity Of Product    ${QUANTITY} 
 
-Scenario #3
+Scenario_03
     [Documentation]    A customer be able to adjusts size of product items or items.
 
-    Open Pomelo Website        ${Browser} 
-    Select Category At Shop    Dresses        Dresses
-    Add Product And Verify     XXS
+    Open Pomelo Website        ${BROWSER} 
+    Select Category At Shop   ${CATEGORY}    ${SUB_CATEGORY}
+    Add Product And Verify      ${SIZE}
     Click Bag
-    Adjust Size Of Product     XS
+    Adjust Size Of Product     ${NEW_SIZE}
 
-Scenario #4
+Scenario_04
     [Documentation]    A customer be able to adjust and delete product items or items.
 
-    Open Pomelo Website          ${Browser} 
-    Select Category At Shop      Dresses        Dresses
-    Add Product And Verify       XXS
+    Open Pomelo Website          ${BROWSER} 
+    Select Category At Shop      ${CATEGORY}    ${SUB_CATEGORY}
+    Add Product And Verify       ${SIZE}
     Click Bag
     Delete Product And Verify
 
-Scenario #5
+Scenario_05
     [Documentation]    A customer be able to fill-in and click apply promo code. (even if promocode is not eligible)
 
-    Open Pomelo Website        ${Browser} 
-    Select Category At Shop    Dresses        Dresses
-    Add Product And Verify     XXS
+    Open Pomelo Website        ${BROWSER} 
+    Select Category At Shop    ${CATEGORY}    ${SUB_CATEGORY}
+    Add Product And Verify     ${SIZE}
     Click Bag
-    Fill-in Promotion          GET30TH
+    Fill-in Promotion          ${CODE_PROMOTION}
 
-Scenario #6
+Scenario_06
     [Documentation]    A customer be able to validate proceed to checkout button.
 
-    Open Pomelo Website        ${Browser} 
-    Select Category At Shop    Dresses        Dresses
-    Add Product And Verify     XXS
+    Open Pomelo Website        ${BROWSER} 
+    Select Category At Shop    ${CATEGORY}    ${SUB_CATEGORY}
+    Add Product And Verify     ${SIZE}
     Click Bag
     Check Out
 
