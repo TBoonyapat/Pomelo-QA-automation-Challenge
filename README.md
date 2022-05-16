@@ -1,6 +1,6 @@
 # Pomelo-QA-automation-Challenge
 ## Getting Started
-> git clone -b Transformation https://github.com/TBoonyapat/Pomelo-QA-automation-Challenge.git
+> git clone https://github.com/TBoonyapat/Pomelo-QA-automation-Challenge.git
 
 ## Installation
 ### Python Packages
@@ -9,4 +9,10 @@ In the first step, check that your pip version is the latest with the below comm
 
 > pip install pip --upgrade
 
-Install required packages from [requirements.txt](/requirements.txt) with command as below before try template.
+Install required packages from [requirements.txt](/requirements.txt) with command as below.
+
+> pip install -r requirements.txt --user
+
+<!-- ```bash
+pip install -r requirements.txt --user
+``` -->
