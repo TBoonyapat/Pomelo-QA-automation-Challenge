@@ -1,3 +1,4 @@
+driver = webdriver.Chrome("chromedriver")
 *** Variables ***
 ${URL}                https://www.pomelofashion.com/th/en/ 
 ${BROWSER}            chrome
