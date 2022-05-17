@@ -19,6 +19,7 @@ If you are use it for macOS you have to run the command as below the below comma
 
 ```python
 robotframework=5.0
+robotframework-seleniumlibrary
 chromedriver
 ```
 

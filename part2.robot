@@ -1,10 +1,13 @@
 *** Settings ***
 Resource         keywords${/}import_setting.resource
-Test Teardown    Close Browsers
+Test Teardown    Close All Browsers
 
 *** Test Cases ***
 TS_01
     [Documentation]    A customer adds the products any cetegory and click "Cart" Icon
+    ...                ${BROWSER}  browser used to open
+    ...                ${CATEGORY}  category in shop
+    ...                ${SUB_CATEGORY}  subcategory in category
     [Tags]      TS_01
     Open Pomelo Website        ${BROWSER} 
     Select Category At Shop    ${CATEGORY}    ${SUB_CATEGORY}
@@ -13,6 +16,11 @@ TS_01
 
 TS_02
     [Documentation]    A customer be able to adjusts quantity of product items or items.
+    ...                ${BROWSER}  browser used to open
+    ...                ${CATEGORY}  category in shop
+    ...                ${SUB_CATEGORY}  subcategory in category
+    ...                ${SIZE}  set size of prodcut
+    ...                ${QUANTITY}  set quantity of prodcut
     [Tags]      TS_02
     Open Pomelo Website           ${BROWSER} 
     Select Category At Shop      ${CATEGORY}    ${SUB_CATEGORY}
@@ -22,6 +30,11 @@ TS_02
 
 TS_03
     [Documentation]    A customer be able to adjusts size of product items or items.
+    ...                ${BROWSER}  browser used to open
+    ...                ${CATEGORY}  category in shop
+    ...                ${SUB_CATEGORY}  subcategory in category
+    ...                ${SIZE}  set size of prodcut
+    ...                ${NEW_SIZE}  set new size of prodcut
     [Tags]      TS_03
     Open Pomelo Website        ${BROWSER} 
     Select Category At Shop   ${CATEGORY}    ${SUB_CATEGORY}
@@ -31,6 +44,10 @@ TS_03
 
 TS_04
     [Documentation]    A customer be able to adjust and delete product items or items.
+    ...                ${BROWSER}  browser used to open
+    ...                ${CATEGORY}  category in shop
+    ...                ${SUB_CATEGORY}  subcategory in category
+    ...                ${SIZE}  set size of prodcut
     [Tags]      TS_04
     Open Pomelo Website          ${BROWSER} 
     Select Category At Shop      ${CATEGORY}    ${SUB_CATEGORY}
@@ -40,6 +57,11 @@ TS_04
 
 TS_05
     [Documentation]    A customer be able to fill-in and click apply promo code. (even if promocode is not eligible)
+    ...                ${BROWSER}  browser used to open
+    ...                ${CATEGORY}  category in shop
+    ...                ${SUB_CATEGORY}  subcategory in category
+    ...                ${SIZE}  set size of prodcut
+    ...                ${CODE_PROMOTION}  code promotion 
     [Tags]      TS_05
     Open Pomelo Website        ${BROWSER} 
     Select Category At Shop    ${CATEGORY}    ${SUB_CATEGORY}
@@ -49,6 +71,10 @@ TS_05
 
 TS_06
     [Documentation]    A customer be able to validate proceed to checkout button.
+    ...                ${BROWSER}  browser used to open
+    ...                ${CATEGORY}  category in shop
+    ...                ${SUB_CATEGORY}  subcategory in category
+    ...                ${SIZE}  set size of prodcut
     [Tags]      TS_06
     Open Pomelo Website        ${BROWSER} 
     Select Category At Shop    ${CATEGORY}    ${SUB_CATEGORY}
