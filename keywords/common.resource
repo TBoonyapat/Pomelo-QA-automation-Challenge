@@ -27,4 +27,4 @@ Wait Element And Select
 Open Pomelo Website
     [Arguments]         ${browser}
     [Documentation]            Get browser and open pomelo web in browser
-    Open Browser    ${URL}     ${browser}
+    Open Browser    ${URL}     ${browser}    

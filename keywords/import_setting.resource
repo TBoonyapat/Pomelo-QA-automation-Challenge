@@ -5,7 +5,7 @@ Library    SeleniumLibrary
 
 Resource         ..${/}config.resource
 
-Resource         general.resource
+Resource         common.resource
 Resource         shopping.resource
 
 Resource         ..${/}locators${/}bag.resource
