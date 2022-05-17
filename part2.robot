@@ -1,6 +1,6 @@
 *** Settings ***
 Resource         keywords${/}import_setting.resource
-Test Teardown    Close All Browsers
+Test Teardown    Close Browsers
 
 *** Test Cases ***
 TS_01

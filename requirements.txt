@@ -1,2 +1,4 @@
 robotframework==5.0
+robotframework-seleniumlibrary
 chromedriver
+selenium==3.141.0
